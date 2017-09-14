@@ -1,35 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import index from '@/components/index'
-import list from '@/components/list'
-import detail from '@/components/detail'
+import home from '../views/home'
+import q1 from '../views/q1'
+import result from '../views/result'
 
 Vue.use(Router)
 
-export default new Router({
+let router=new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'home',
+      component: home
     },
     {
-      path: '/index',
-      name: 'index',
-      component: index
+    	path:'/q1/:step',
+    	name:'q1',
+    	component:q1
     },
     {
-      path: '/list',
-      name: 'list',
-      component: list
-    },
-    {
-      path: '/detail',
-      name: 'detail',
-      component: {
-      	template:"<h1>detail页</h1>"
-      }
+      path: '/result',
+      name: 'result',
+      component: result
     }
   ]
 })
+
+export default router;
